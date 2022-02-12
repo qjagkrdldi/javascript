@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        .animate__bounce {
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+        }
+
+        h1:hover {
+            animation: bounce 1s;
+        }
+
+        section {
+            height: 50vh;
+        }
+
+        section[class^="animate"] {
+            opacity: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="animate__animated">A simple example of using Animate.css</h1>
+
+    <p>Here's the element that will be animated.</p>
+    <section class="animate__fadeInBottomLeft">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ea ullam delectus, debitis molestiae iusto alias explicabo
+            culpa quod rerum at id commodi vero distinctio numquam reprehend
+            erit similique maxime, accusamus accusantium?</p>
+    </section>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ea ullam delectus, debitis molestiae iusto alias explicabo
+            culpa quod rerum at id commodi vero distinctio numquam reprehend
+            erit similique maxime, accusamus accusantium?</p>
+    </section>
+    <section class="animate__animated" data-effect="animate__fadeInBottomLeft">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ea ullam delectus, debitis molestiae iusto alias explicabo
+            culpa quod rerum at id commodi vero distinctio numquam reprehend
+            erit similique maxime, accusamus accusantium?</p>
+    </section>
+    <section class="animate__animated" data-effect="animate__fadeInBottomRight">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ea ullam delectus, debitis molestiae iusto alias explicabo
+            culpa quod rerum at id commodi vero distinctio numquam reprehend
+            erit similique maxime, accusamus accusantium?</p>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        var activated = false;
+
+        $(window).scroll(function () {
+            var sct = $(this).scrollTop();
+
+            $('section').each(function () {
+                var sectionOST = $(this).offset().top - 500;
+                var sectionEffect = $(this).attr('data-effect');
+                if (sct >= sectionOST && activated == false) {
+                    $(this).addClass(sectionEffect);
+                    activate = true;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

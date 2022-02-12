@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>연산</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+        <script>
+            // function send(){
+            //     alert('경고');
+            // }
+            // send();
+
+                var a = 10;
+                var b = 20; //전역변수
+
+                function add(x,y){
+                    var sum = x + y; //지역변수
+                    return sum;
+                }
+
+                total = add(a,b);
+                document.write(total);
+        </script>
+
+        <h2>object 객체</h2>
+        <script>
+            var baby = {
+                age:'2살',
+                sex:'남자',
+                birthday:'5월1일',
+                getAge:getAge
+
+            }
+
+            function getAge(){
+                    return this.age;
+                }
+
+            var age = baby.getAge();
+            
+            document.write(age);
+        </script>
+        
+		
+
+
+	</body>
+</html>
